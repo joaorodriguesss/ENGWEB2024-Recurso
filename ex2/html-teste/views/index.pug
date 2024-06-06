@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1(title).w3-container.w3-light-green
+    | #{title}
+
+  if livros.length > 0
+    .w3-responsive
+      table.w3-table-all.w3-card-4
+        thead
+          tr
+            th id
+            th title
+            th author
+            th publishDate
+            th pages
+        tbody
+          each livro in livros
+            tr.w3-hover-shadow
+              td
+                a(href='/' + livro._id).w3-text-green= livro._id
+              td= livro.title
+              td
+                each author in livro.author
+                  a(href="/authors/" + author) #{author}
+                  br
+              td= livro.publishDate
+              td= livro.pages
+  else
+    .w3-container
+      p.w3-text-grey Não há livros disponíveis.

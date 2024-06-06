@@ -1,0 +1,125 @@
+extends layout
+
+block content
+    h1(title).w3-container.w3-light-green
+        | #{title}
+
+    a.w3-button.w3-round.w3-margin.w3-dark-grey(href="/") Voltar
+    br
+
+    if livro.coverImg
+        img.w3-card.w3-margin(src=livro.coverImg, alt=livro.title, style='width:300px')
+
+    .w3-card.w3-margin
+        .w3-container
+        p.w3-text-grey
+            strong ID: 
+            | #{livro._id}
+
+        p.w3-text-grey
+            strong Title: 
+            | #{livro.title}
+
+        p.w3-text-grey
+            strong Series: 
+            | #{livro.series}
+
+        p.w3-text-grey
+            strong Author: 
+            each author in livro.author
+                a(href="/authors/" + author) #{author}
+                br
+
+        p.w3-text-grey
+            strong Rating: 
+            | #{livro.rating}
+
+        p.w3-text-grey
+            strong Description: 
+            | #{livro.description}
+
+        p.w3-text-grey
+            strong ISBN: 
+            | #{livro.isbn}
+
+        p.w3-text-grey
+            strong Genres: 
+            each genre in livro.genres
+                | #{genre} 
+                br
+
+        p.w3-text-grey
+            strong Title: 
+            | #{livro.title}
+
+        p.w3-text-grey
+            strong Characters: 
+            each character in livro.characters
+                | #{character} 
+                br
+
+        p.w3-text-grey
+            strong Book Format: 
+            | #{livro.bookFormat}
+
+        p.w3-text-grey
+            strong Edition: 
+            | #{livro.edition}
+
+        p.w3-text-grey
+            strong Pages: 
+            | #{livro.pages}
+
+        p.w3-text-grey
+            strong Publisher: 
+            | #{livro.publisher}
+            
+        p.w3-text-grey
+            strong Publish Date: 
+            | #{livro.publishDate}
+            
+        p.w3-text-grey
+            strong First Publish Date: 
+            | #{livro.firstPublishDate}
+            
+        p.w3-text-grey
+            strong Awards: 
+            each award in livro.awards
+                | #{award} 
+                br
+            
+        p.w3-text-grey
+            strong Number of Ratings: 
+            | #{livro.numRatings}
+            
+        p.w3-text-grey
+            strong Ratings By Stars: 
+            each rating in livro.ratingsByStars
+                | #{rating} 
+                br
+
+        p.w3-text-grey
+            strong Liked Percent: 
+            | #{livro.likedPercent}
+
+        p.w3-text-grey
+            strong Setting: 
+            each setting in livro.setting
+                | #{setting} 
+                br
+
+        p.w3-text-grey
+            strong Number of Ratings: 
+            | #{livro.numRatings}
+
+        p.w3-text-grey
+            strong BBE Score: 
+            | #{livro.bbeScore}
+
+        p.w3-text-grey
+            strong BBE Votes: 
+            | #{livro.bbeVotes}
+
+        p.w3-text-grey
+            strong Price: 
+            | #{livro.price}
